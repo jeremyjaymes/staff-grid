@@ -3,9 +3,13 @@
  * Shortcodes
  */
 
- add_shortcode( 'team', 'intactic_team_post_shortchode' );
- function intactic_team_post_shortchode( $atts ) {
+ add_shortcode( 'team_grid', 'team_grid_shortchode' );
+ function team_grid_shortchode( $atts ) {
+   
     ob_start();
+
+    wp_enqueue_script( 'team-grid-js', TEAMGRID_PLUGIN_DIR . '/js/team-grid.min.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_style( 'team-grid-css', TEAMGRID_PLUGIN_DIR . '/css/team-grid.min.css', '1.0.0', true);
 
     $args = array(
                 'post_type'      => 'team_member',
@@ -15,7 +19,7 @@
     $team = new WP_Query($args);
 
     if( $team->have_posts() ) :
-        echo '<div class="employee-team clearfix">';
+        echo '<div class="team-grid clearfix">';
         echo '<h2 id="team">Team</h2>';
 
         while( $team->have_posts() ) : $team->the_post(); ?>
@@ -29,7 +33,7 @@
                     }
                 ?>
 
-                <h4 class="employee-name"><i class="plus dashicons dashicons-plus"></i> <?php the_title(); ?></h4>
+                <h4 class="employee-name"><i class="plus">&plus;</i> <?php the_title(); ?></h4>
                 <div class="employee-bio">
                     <?php the_content(); ?>
                 </div>
@@ -40,8 +44,8 @@
     endwhile;
         echo '</div>';
 
-        $myvariable = ob_get_clean();
-        return $myvariable;
+        $cleanvar = ob_get_clean();
+        return $cleanvar;
     
     endif;
  }
