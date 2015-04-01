@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Team Grid
- * Plugin URI: http://papertreedesign.com
+ * Plugin URI: http://jeremyjaymes.com
  * Description: 
  * Version: 1.0.0
  * Author: jeremyjaymes

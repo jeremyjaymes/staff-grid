@@ -2,7 +2,9 @@
  * Team Grid Stylesheet
  */
 
-
+.team-grid {
+    overflow: hidden;
+}
 
 .team-grid .employee {
     padding: 20px;
@@ -27,7 +29,7 @@
 }
 
 @media screen and (min-width: 768px) {
-    .team-grid .employee {
+    .team-grid  .grid-two {
         float: left;
         width: 48.717948717948715%%
     }
