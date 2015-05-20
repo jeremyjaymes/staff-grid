@@ -39,7 +39,8 @@
 
                 <h4 class="staff-name"><i class="plus">&plus;</i> <?php the_title(); ?></h4>
                 <div class="staff-bio">
-                    <?php the_content(); ?>
+                    <?php the_excerpt(); ?>
+                    <p><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php apply_filters( 'staff_grid_bio_more_link', _e( 'Read More', 'staff-grid' ) ) ?></a></p>
                 </div>
                 <hr>
             </div>
