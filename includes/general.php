@@ -13,7 +13,7 @@
  * @param string $url, request url
  * @return array request arguments
  */
-function team_grid_functionality_hidden( $r, $url ) {
+function staff_grid_functionality_hidden( $r, $url ) {
     
     if ( 0 !== strpos( $url, 'http://api.wordpress.org/plugins/update-check' ) )
         return $r; // Not a plugin update request. Bail immediately.
@@ -25,4 +25,4 @@ function team_grid_functionality_hidden( $r, $url ) {
 
     return $r;
 }
-add_filter( 'http_request_args', 'team_grid_functionality_hidden', 5, 2 );
+add_filter( 'http_request_args', 'staff_grid_functionality_hidden', 5, 2 );

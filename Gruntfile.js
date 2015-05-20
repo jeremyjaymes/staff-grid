@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         tasks: ['cssmin']
       },
       scripts: {
-        files: ['js/team-grid.js'],
+        files: ['js/staff-grid.js'],
         tasks:  ['uglify']
       }
     },
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'js/team-grid.min.js' : ['js/team-grid.js'],
+          'js/staff-grid.min.js' : ['js/staff-grid.js'],
         }
       }
     },
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'css/team-grid.min.css': ['css/team-grid.css']
+          'css/staff-grid.min.css': ['css/staff-grid.css']
         }
       }
     }
