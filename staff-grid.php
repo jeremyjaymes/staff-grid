@@ -2,18 +2,20 @@
 /**
  * Plugin Name: Team Grid
  * Plugin URI: http://jeremyjaymes.com
- * Description: 
- * Version: 1.0.0
+ * Description: Grid based team member page layout.
+ * Version: 0.5.0
  * Author: jeremyjaymes
  * Author URI: http://jeremyjaymes.com
+ * Text Domain: staff-grid
+ * Domain Path: /languages
  * License: A short license name. Example: GPL2
  */
 
 defined( 'WPINC' ) or die;
 
 
-if ( !defined('TEAMGRID_PLUGIN_DIR')) {
-    define('TEAMGRID_PLUGIN_DIR', plugin_dir_url( __FILE__ ));
+if ( !defined('STAFFGRID_PLUGIN_DIR')) {
+    define('STAFFGRID_PLUGIN_DIR', plugin_dir_url( __FILE__ ));
 }
 
 include( dirname( __FILE__ ) . '/includes/general.php');

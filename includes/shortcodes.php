@@ -1,6 +1,13 @@
 <?php
 /**
  * Shortcodes
+ * 
+ * @package    StaffGrid
+ * @subpackage Includes
+ * @author     Jeremy Vossman <jeremy@papertreedesign.com>
+ * @copyright  Copyright (c) 2015, Jeremy Vossman
+ * @link       https://github.com/jeremyjaymes/staff-grid
+ * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 /**
@@ -12,11 +19,11 @@
    
     ob_start();
 
-    wp_enqueue_script( 'staff-grid-js', TEAMGRID_PLUGIN_DIR . '/js/staff-grid.min.js', array('jquery'), '1.0.0', true);
-    wp_enqueue_style( 'staff-grid-css', TEAMGRID_PLUGIN_DIR . '/css/staff-grid.min.css', '1.0.0', true);
+    wp_enqueue_script( 'staff-grid-js', STAFFGRID_PLUGIN_DIR . '/js/staff-grid.min.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_style( 'staff-grid-css', STAFFGRID_PLUGIN_DIR . '/css/staff-grid.min.css', '1.0.0', true);
 
     $args = array(
-                'post_type'      => 'staff_member',
+                'post_type'      => 'staff',
                 'posts_per_page' => 99
             );
 
@@ -24,7 +31,7 @@
 
     if( $team->have_posts() ) :
         echo '<div class="staff-grid clearfix">';
-        echo '<h2>' . apply_filters( 'staff_grid_section_title', __( 'Team', 'staff-grid' ) . '</h2>';
+        echo '<h2>' . apply_filters( 'staff_grid_section_title', __( 'Team', 'staff-grid' ) ) . '</h2>';
 
         while( $team->have_posts() ) : $team->the_post(); ?>
 
@@ -37,7 +44,7 @@
                     }
                 ?>
 
-                <h4 class="staff-name"><i class="plus">&plus;</i> <?php the_title(); ?></h4>
+                <h4 class="staff-name"><?php the_title(); ?> <i class="dashicons plus">&plus;</i></h4>
                 <div class="staff-bio">
                     <?php the_excerpt(); ?>
                     <p><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php apply_filters( 'staff_grid_bio_more_link', _e( 'Read More', 'staff-grid' ) ) ?></a></p>

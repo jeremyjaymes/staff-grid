@@ -1,5 +1,16 @@
 <?php
 /**
+ * Helper Functions
+ * 
+ * @package    StaffGrid
+ * @subpackage Includes
+ * @author     Jeremy Vossman <jeremy@papertreedesign.com>
+ * @copyright  Copyright (c) 2015, Jeremy Vossman
+ * @link       https://github.com/jeremyjaymes/staff-grid
+ * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ */
+
+/**
  * Don't Update Plugin
  * @since 1.0.0
  * 

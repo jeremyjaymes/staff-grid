@@ -1,5 +1,5 @@
 /**
- * Team Grid Stylesheet
+ * Staff Grid Stylesheet
  */
 
 .staff-grid {
@@ -36,7 +36,7 @@
 }
 
 @media screen and (min-width: 960px) {
-    .staff-grid .staff-person {
+    .staff-grid .grid-two {
         width: 31.623931623931625%
     }
 }
