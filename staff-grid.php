@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Team Grid
+ * Plugin Name: Staff Grid
  * Plugin URI: http://jeremyjaymes.com
- * Description: Grid based team member page layout.
+ * Description: Grid based staff member page layout.
  * Version: 0.5.0
  * Author: jeremyjaymes
  * Author URI: http://jeremyjaymes.com
