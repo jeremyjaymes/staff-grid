@@ -19,12 +19,14 @@
    
     ob_start();
 
-    wp_enqueue_script( 'staff-grid-js', STAFFGRID_PLUGIN_DIR . '/js/staff-grid.min.js', array('jquery'), '1.0.0', true);
+    //wp_enqueue_script( 'staff-grid-js', STAFFGRID_PLUGIN_DIR . '/js/staff-grid.min.js', array('jquery'), '1.0.0', true);
     wp_enqueue_style( 'staff-grid-css', STAFFGRID_PLUGIN_DIR . '/css/staff-grid.min.css', '1.0.0', true);
 
     $args = array(
                 'post_type'      => 'staff',
-                'posts_per_page' => 99
+                'posts_per_page' => 99,
+                'orderby'        => 'menu_order',
+                'order'          => 'ASC'
             );
 
     $team = new WP_Query($args);
@@ -39,17 +41,16 @@
                 <?php 
                     if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
                         echo '<div class="staff-headshot">';
-                            the_post_thumbnail();
+                            the_post_thumbnail( 'staff-grid' );
                         echo '</div>';
                     }
                 ?>
 
-                <h4 class="staff-name"><?php the_title(); ?> <i class="dashicons plus">&plus;</i></h4>
+                <h4 class="staff-name"><?php the_title(); ?> <!--i class="dashicons plus">&plus;</i--></h4>
                 <div class="staff-bio">
                     <?php the_excerpt(); ?>
-                    <p><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php apply_filters( 'staff_grid_bio_more_link', _e( 'Read More', 'staff-grid' ) ) ?></a></p>
+                    <!--p><a href="<?php //the_permalink(); ?>" title="<?php //the_title(); ?>"><?php //apply_filters( 'staff_grid_bio_more_link', _e( 'Read More', 'staff-grid' ) ) ?></a></p-->
                 </div>
-                <hr>
             </div>
 
     <?php

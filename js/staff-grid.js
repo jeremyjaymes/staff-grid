@@ -1,4 +1,4 @@
-/* staff-grid.js */
+/*! staff-grid.js 10-25-2016 */
 jQuery(document).ready(function($) {
     $('.staff-bio').hide();
 

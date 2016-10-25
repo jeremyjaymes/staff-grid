@@ -13,6 +13,7 @@
 
 defined( 'WPINC' ) or die;
 
+require_once __DIR__.'/autoloader.php';
 
 if ( !defined('STAFFGRID_PLUGIN_DIR')) {
     define('STAFFGRID_PLUGIN_DIR', plugin_dir_url( __FILE__ ));
@@ -21,3 +22,5 @@ if ( !defined('STAFFGRID_PLUGIN_DIR')) {
 include( dirname( __FILE__ ) . '/includes/general.php');
 include( dirname( __FILE__ ) . '/includes/post-type.php');
 include( dirname( __FILE__ ) . '/includes/shortcodes.php');
+
+new StaffGrid\Admin\Admin();

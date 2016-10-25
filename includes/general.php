@@ -37,3 +37,6 @@ function staff_grid_functionality_hidden( $r, $url ) {
     return $r;
 }
 add_filter( 'http_request_args', 'staff_grid_functionality_hidden', 5, 2 );
+
+
+add_image_size( 'staff-grid', 250, 250, true);
