@@ -10,15 +10,17 @@ namespace StaffGrid\Admin;
 use StaffGrid\Core\WeDevs_Settings_API;
 
 if ( !class_exists('Admin' ) ):
-class Admin {
+    
+class Admin 
+{
 
     private $settings_api;
 
-    function __construct() {
+    function __construct($loader) {
         $this->settings_api = new WeDevs_Settings_API;
 
-        add_action( 'admin_init', array($this, 'admin_init') );
-        add_action( 'admin_menu', array($this, 'admin_menu') );
+        $loader->add_action( 'admin_init', $this, 'admin_init' );
+        $loader->add_action( 'admin_menu', $this, 'admin_menu' );
     }
 
     function admin_init() {
@@ -38,8 +40,8 @@ class Admin {
     function get_settings_sections() {
         $sections = array(
             array(
-                'id'    => 'staffgrid_basics',
-                'title' => __( 'Basic Settings', 'staff-grid' )
+                'id'    => 'sg_settings',
+                'title' => __( 'Plugin Settings', 'staff-grid' )
             )
         );
         return $sections;
@@ -52,7 +54,7 @@ class Admin {
      */
     function get_settings_fields() {
         $settings_fields = array(
-            'staffgrid_basics' => array(
+            'sg_settings' => array(
                 array(
                     'name'              => 'title',
                     'label'             => __( 'Title', 'staff-grid' ),

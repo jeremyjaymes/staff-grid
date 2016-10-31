@@ -48,12 +48,6 @@
 @media screen and (min-width: 768px) {
     .staff-grid  .grid-two {
         float: left;
-        width: 48.717948717948715%
-    }
-}
-
-@media screen and (min-width: 960px) {
-    .staff-grid .grid-two {
         width: 31.623931623931625%
     }
 }

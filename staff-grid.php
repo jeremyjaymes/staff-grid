@@ -20,7 +20,6 @@ if ( !defined('STAFFGRID_PLUGIN_DIR')) {
 }
 
 include( dirname( __FILE__ ) . '/includes/general.php');
-include( dirname( __FILE__ ) . '/includes/post-type.php');
-include( dirname( __FILE__ ) . '/includes/shortcodes.php');
+//include( dirname( __FILE__ ) . '/includes/shortcodes.php');
 
-new StaffGrid\Admin\Admin();
+(new StaffGrid\Core\Plugin('staff-grid', '0.0.9'))->run();

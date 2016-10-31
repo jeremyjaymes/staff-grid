@@ -4,12 +4,12 @@ var gulp = require('gulp');
     rename = require('gulp-rename');
 
 var config ={
-    cssDir: 'css/',
-    jsDir: 'js/'
+    cssDir: 'assets/css/',
+    jsDir: 'assets/js/'
 };
 
 gulp.task('css', function() {
-  return gulp.src([config.cssDir + '*.css', '!css/*.min.css'])
+  return gulp.src([config.cssDir + '*.css', '!assets/css/*.min.css'])
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(rename({
         suffix: '.min'
@@ -21,7 +21,7 @@ gulp.task('compress', function() {
     var options = {
         preserveComments: 'license'
     };
-    return gulp.src([config.jsDir + '*.js', '!js/*.min.js'])
+    return gulp.src([config.jsDir + '*.js', '!assets/js/*.min.js'])
         .pipe(uglify(options))
         .pipe(rename({
             suffix: '.min'
