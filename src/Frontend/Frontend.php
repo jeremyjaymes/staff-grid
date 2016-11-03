@@ -3,7 +3,7 @@
  * @Author: Jeremy
  * @Date:   2016-10-26 15:10:50
  * @Last Modified by:   Jeremy
- * @Last Modified time: 2016-10-31 12:07:33
+ * @Last Modified time: 2016-11-03 10:29:48
  * <!--p><a href="<?php //the_permalink(); ?>" title="<?php //the_title(); ?>"><?php //apply_filters( 'staff_grid_bio_more_link', _e( 'Read More', 'staff-grid' ) ) ?></a></p-->
  */
 
@@ -61,12 +61,21 @@ class Frontend
                     $output .= '<div class="staff-headshot">' . get_the_post_thumbnail( get_the_ID(), 'staff-grid' ) . '</div>';
                 }
 
-                $output .= '<h4 class="staff-name">'.
-                            get_the_title().
-                            '<!--i class="dashicons plus">&plus;</i--></h4>
-                            <div class="staff-bio">'.
-                            get_the_excerpt().
-                            '</div></div>';
+                $meta = get_post_meta( get_the_ID(), '_staff_grid_title_key', true);
+
+                    $output .= '<h4 class="staff-name">'.
+                                get_the_title();
+
+                if ( $meta ) {
+                    $output .= '<span class="staff-title">'.
+                                $meta.
+                                '</span>';
+                }
+
+                    $output .= '</h4>
+                                <div class="staff-bio">'.
+                                get_the_excerpt().
+                                '</div></div>';
 
                 $i++;
             endwhile;

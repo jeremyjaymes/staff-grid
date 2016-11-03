@@ -8,6 +8,7 @@
 namespace StaffGrid\Admin;
 
 use StaffGrid\Core\WeDevs_Settings_API;
+use StaffGrid\Admin\Metaboxes;
 
 if ( !class_exists('Admin' ) ):
     
@@ -16,11 +17,15 @@ class Admin
 
     private $settings_api;
 
+    private $metaboxes;
+
     function __construct($loader) {
         $this->settings_api = new WeDevs_Settings_API;
 
         $loader->add_action( 'admin_init', $this, 'admin_init' );
         $loader->add_action( 'admin_menu', $this, 'admin_menu' );
+
+        new Metaboxes();
     }
 
     function admin_init() {

@@ -40,8 +40,14 @@
                     $output .= '<div class="staff-headshot">' . get_the_post_thumbnail( get_the_ID(), 'staff-grid' ) . '</div>';
                 }
 
+                $meta = get_post_meta( get_the_ID(), '_staff_grid_title_key', true);
+                echo $meta;
+
                 $output .= '<h4 class="staff-name">'.
                             get_the_title().
+                            if ( $meta ) {
+                                $meta;
+                            }
                             '<!--i class="dashicons plus">&plus;</i--></h4>
                             <div class="staff-bio">'.
                             get_the_excerpt().
