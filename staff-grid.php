@@ -19,7 +19,4 @@ if ( !defined('STAFFGRID_PLUGIN_DIR')) {
     define('STAFFGRID_PLUGIN_DIR', plugin_dir_url( __FILE__ ));
 }
 
-include( dirname( __FILE__ ) . '/includes/general.php');
-//include( dirname( __FILE__ ) . '/includes/shortcodes.php');
-
 (new StaffGrid\Core\Plugin('staff-grid', '0.0.9'))->run();

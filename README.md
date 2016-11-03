@@ -16,4 +16,5 @@ Tried to keep the styles and functionality pretty vanilla so it can be modified 
 [http://papertreedesign.com](http://papertreedesign.com)
 
 ## Ack
-
+- [WP Plugin Boilerplate](https://github.com/regularjack/wp-plugin-boilerplate)
+- [WordPress Settings API Class](https://github.com/tareq1988/wordpress-settings-api-class)
