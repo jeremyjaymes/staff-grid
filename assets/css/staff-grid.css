@@ -1,11 +1,13 @@
 /**
  * Staff Grid Stylesheet
  */
-.staff-grid {
-    overflow: hidden;
+.staff-grid:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.staff-grid h2 {
+.staff-grid-header {
     text-align: center;
 }
 

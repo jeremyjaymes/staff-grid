@@ -3,7 +3,7 @@
  * @Author: Jeremy
  * @Date:   2016-10-26 15:10:50
  * @Last Modified by:   Jeremy
- * @Last Modified time: 2016-11-03 10:29:48
+ * @Last Modified time: 2016-11-14 10:20:42
  * <!--p><a href="<?php //the_permalink(); ?>" title="<?php //the_title(); ?>"><?php //apply_filters( 'staff_grid_bio_more_link', _e( 'Read More', 'staff-grid' ) ) ?></a></p-->
  */
 
@@ -48,11 +48,29 @@ class Frontend
 
     public function shortcode_content( $args = array() ) {
 
+        //* Get plugin options
+        $options = get_option( 'sg_settings' );
+        $title = $options['title'];
+        $description = $options['description'];
+
         $staff = $this->get_staff();
         if( $staff->have_posts() ) {
                 $i = 0;
                 $output = '<div class="staff-grid clearfix">';
-                $output .= '<h2>' . apply_filters( 'staff_grid_section_title', __( 'Team', 'staff-grid' ) ) . '</h2>';
+
+                if ( $title != '' || $description != '' ) {
+                    $output .= '<div class="staff-grid-header">';
+                    
+                    if ( $title != '' ) {
+                        $output .= '<h2>' . esc_html( $options['title'] ) . '</h2>';
+                    }
+
+                    if ( $description != '' ) {
+                        $output .= '<p>' . esc_html( $options['description'] ) . '</p>';
+                    }
+                    
+                    $output .= '</div>';
+                }
 
             while( $staff->have_posts() ) : $staff->the_post(); 
                 $first = ($i % 3 == 0) ? 'first' : '';
